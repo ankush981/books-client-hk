@@ -6,15 +6,17 @@ import BookDetail from "./components/BookDetail";
 import AuthorsList from "./components/AuthorsList";
 import AuthorDetail from "./components/AuthorDetail";
 import CreateAuthor from "./components/CreateAuthor";
+import EditAuthor from "./components/EditAuthor";
 
 const Routes = () => {
   return (
     <Switch>
       <Route path="/" component={BooksList} exact />
-      <Route path="/book/:id" component={BookDetail} />
-      <Route path="/authors" component={AuthorsList} />
-      <Route path="/author/:id" component={AuthorDetail} />
-      <Route path="/author/create" component={CreateAuthor} />
+      <Route path="/book/:id" component={BookDetail} exact />
+      <Route path="/authors" component={AuthorsList} exact />
+      <Route path="/author/create" component={CreateAuthor} exact />
+      <Route path="/author/:id" component={AuthorDetail} exact />
+      <Route path="/author/:id/edit" component={EditAuthor} exact />
     </Switch>
   );
 };
