@@ -3,10 +3,7 @@ import api from "../api";
 import { Link } from "react-router-dom";
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { books: [] };
-  }
+  state = { books: [] };
 
   renderedBooks = () => {
     if (this.state.books.length === 0) {
@@ -15,9 +12,9 @@ class Home extends React.Component {
 
     return this.state.books.map((book) => {
       return (
-        <div className="bookNameWrapper mb-1" key={book.id}>
+        <div className="nameWrapper mb-1" key={book.id}>
           <Link to={`/book/${book.id}`}>
-            <div className="bookName">{book.name}</div>
+            <div className="name">{book.name}</div>
           </Link>
         </div>
       );

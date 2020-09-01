@@ -29,14 +29,12 @@ h3.pageHeading {
   font-size: 1.5em;
 }
 
-.booksList {
-  .bookNameWrapper {
-    .bookName {
-      display: inline-block;
-      padding: 8px 20px;
-      background-color: $off-white-2;
-      border-radius: 10px;
-    }
+.nameWrapper {
+  .name {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: $off-white-2;
+    border-radius: 10px;
   }
 
   a {
