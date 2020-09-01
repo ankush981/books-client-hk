@@ -43,7 +43,7 @@ class BookDetail extends React.Component {
     return (
       <React.Fragment>
         <h3 className="pageHeading mb-3">Book Details</h3>
-        <div className="bookDetail">{this.renderedBookDetail()}</div>
+        <div>{this.renderedBookDetail()}</div>
       </React.Fragment>
     );
   }
