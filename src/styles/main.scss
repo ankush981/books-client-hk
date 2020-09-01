@@ -1,11 +1,40 @@
-$color-primary: #dfdfdf;
+// define colors for the UI
+$white: #fff;
+$dull-black: #444;
+$off-white-2: #eaeaea;
+
+nav {
+  background-color: $dull-black;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  border-radius: 5px;
+
+  a {
+    color: $off-white-2;
+    padding: 10px 20px;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: $dull-black;
+    background-color: $off-white-2;
+  }
+
+  .active {
+    color: $white;
+  }
+}
+
+h3.pageHeading {
+  font-size: 1.5em;
+}
 
 .booksList {
   .bookNameWrapper {
     .bookName {
       display: inline-block;
       padding: 8px 20px;
-      background-color: $color-primary;
+      background-color: $off-white-2;
       border-radius: 10px;
     }
   }
