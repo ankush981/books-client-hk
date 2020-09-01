@@ -1,5 +1,6 @@
 import React from "react";
 import api from "../api";
+import { Link } from "react-router-dom";
 
 class Home extends React.Component {
   constructor(props) {
@@ -15,7 +16,9 @@ class Home extends React.Component {
     return this.state.books.map((book) => {
       return (
         <div className="bookNameWrapper mb-1" key={book.id}>
-          <div className="bookName">{book.name}</div>
+          <Link to={`/book/${book.id}`}>
+            <div className="bookName">{book.name}</div>
+          </Link>
         </div>
       );
     });
