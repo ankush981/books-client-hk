@@ -38,6 +38,10 @@ h3.pageHeading {
       border-radius: 10px;
     }
   }
+
+  a {
+    color: $dull-black;
+  }
 }
 
 @import "~bootstrap/scss/bootstrap.scss";
