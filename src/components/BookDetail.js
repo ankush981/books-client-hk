@@ -1,12 +1,13 @@
 import React from "react";
 import api from "../api";
+import { Link } from "react-router-dom";
 
 class BookDetail extends React.Component {
   state = { book: null };
 
   componentDidMount() {
-    const bookId = this.props.match.params.id;
-    api.get(`/book/${bookId}`).then((res) => {
+    this.bookId = this.props.match.params.id;
+    api.get(`/book/${this.bookId}`).then((res) => {
       this.setState({ book: res.data });
     });
   }
@@ -44,6 +45,11 @@ class BookDetail extends React.Component {
       <React.Fragment>
         <h3 className="pageHeading mb-3">Book Details</h3>
         <div>{this.renderedBookDetail()}</div>
+        <Link to={`/book/${this.bookId}/edit`}>
+          <button className="btn btn-secondary btn-outline mt-2">
+            Edit this book
+          </button>
+        </Link>
       </React.Fragment>
     );
   }
