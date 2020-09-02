@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 
 import BooksList from "./components/BooksList";
 import BookDetail from "./components/BookDetail";
+import CreateBook from "./components/CreateBook";
 import AuthorsList from "./components/AuthorsList";
 import AuthorDetail from "./components/AuthorDetail";
 import CreateAuthor from "./components/CreateAuthor";
@@ -12,6 +13,7 @@ const Routes = () => {
   return (
     <Switch>
       <Route path="/" component={BooksList} exact />
+      <Route path="/book/create" component={CreateBook} exact />
       <Route path="/book/:id" component={BookDetail} exact />
       <Route path="/authors" component={AuthorsList} exact />
       <Route path="/author/create" component={CreateAuthor} exact />
