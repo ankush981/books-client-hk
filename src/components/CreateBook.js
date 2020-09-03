@@ -14,7 +14,7 @@ class CreateAuthor extends React.Component {
   };
 
   componentDidMount() {
-    api.get("/authors").then((res) => {
+    api.getAllAuthors().then((res) => {
       this.setState({ ...this.state, allAuthors: res.data });
     });
   }
@@ -42,7 +42,7 @@ class CreateAuthor extends React.Component {
     }
 
     api
-      .post("/book", {
+      .createBook({
         name: this.state.name,
         isbn: this.state.isbn,
         author: this.state.author,

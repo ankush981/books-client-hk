@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 class BookDetail extends React.Component {
   state = { book: null };
 
-  componentDidMount() {
+  async componentDidMount() {
     this.bookId = this.props.match.params.id;
-    api.get(`/book/${this.bookId}`).then((res) => {
-      this.setState({ book: res.data });
+    api.getBookById(this.bookId).then((res) => {
+      this.setState({ ...this.state, book: res.data });
     });
   }
 

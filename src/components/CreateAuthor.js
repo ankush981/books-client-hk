@@ -29,7 +29,7 @@ class CreateAuthor extends React.Component {
     }
 
     api
-      .post("/author", {
+      .createAuthor({
         firstName: this.state.firstName,
         lastName: this.state.lastName,
       })

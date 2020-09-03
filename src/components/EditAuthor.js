@@ -15,7 +15,7 @@ class EditAuthor extends React.Component {
     const authorId = this.props.match.params.id;
     this.setState({ ...this.state, id: authorId });
 
-    api.get(`/author/${authorId}`).then((res) => {
+    api.getAuthorById(authorId).then((res) => {
       this.setState({ ...this.state, ...res.data });
     });
   }
@@ -39,7 +39,7 @@ class EditAuthor extends React.Component {
     }
 
     api
-      .put(`/author/${this.state.id}`, {
+      .updateAuthor(this.state.id, {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
       })

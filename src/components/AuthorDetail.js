@@ -7,7 +7,7 @@ class BookDetail extends React.Component {
 
   componentDidMount() {
     this.authorId = this.props.match.params.id;
-    api.get(`/author/${this.authorId}`).then((res) => {
+    api.getAuthorById(this.authorId).then((res) => {
       this.setState({ author: res.data });
     });
   }

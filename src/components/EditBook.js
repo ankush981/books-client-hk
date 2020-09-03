@@ -18,16 +18,17 @@ class EditBook extends React.Component {
     const bookId = this.props.match.params.id;
     this.setState({ ...this.state, id: bookId });
 
-    api.get(`/book/${bookId}`).then((res) => {
+    api.getBookById(bookId).then((res) => {
+      const book = res.data;
       this.setState({
         ...this.state,
-        name: res.data.name,
-        isbn: res.data.isbn,
-        authorId: res.data.author.id,
+        name: book.name,
+        isbn: book.isbn,
+        authorId: book.author.id,
       });
     });
 
-    api.get("/authors").then((res) => {
+    api.getAllAuthors().then((res) => {
       this.setState({ ...this.state, authors: res.data });
     });
   }
@@ -55,10 +56,10 @@ class EditBook extends React.Component {
     }
 
     api
-      .put(`/book/${this.state.id}`, {
+      .updateBook(this.state.id, {
         name: this.state.name,
         isbn: this.state.isbn,
-        author: this.state.authorId,
+        authorId: this.state.authorId,
       })
       .then(() => {
         this.setState({ ...this.state, apiSuccess: true });

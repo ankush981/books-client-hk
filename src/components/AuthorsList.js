@@ -25,7 +25,7 @@ class Home extends React.Component {
   };
 
   componentDidMount() {
-    api.get("/authors").then((res) => {
+    api.getAllAuthors().then((res) => {
       this.setState({ authors: res.data });
     });
   }

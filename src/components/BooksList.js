@@ -21,8 +21,8 @@ class Home extends React.Component {
     });
   };
 
-  componentDidMount() {
-    api.get("/books").then((res) => {
+  async componentDidMount() {
+    api.getAllBooks().then((res) => {
       this.setState({ books: res.data });
     });
   }
